@@ -7,6 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return this.appService.getHello();
+    return 'its a test task for zenbit. To test the functionlity please get :80 post or post :3000/form'//this.appService.getHello();
   }
+
 }

@@ -14,7 +14,7 @@ export class FormController {
     async getAll(){
         const results = await this.formService.getAll();
 
-        if (!results || !results.length) throw new HttpException('Appointmens not found', HttpStatus.NO_CONTENT);
+        if (!results?.length) throw new HttpException('Appointmens not found', HttpStatus.NO_CONTENT);
 
         return results;
     }
@@ -25,7 +25,7 @@ export class FormController {
 
         const results = await this.formService.getByEmail(email);
 
-        if (!results || !results.length) throw new HttpException('Appointmens not found', HttpStatus.NO_CONTENT);
+        if (!results?.length) throw new HttpException('Appointmens not found', HttpStatus.NO_CONTENT);
 
         return results;
     }
@@ -37,7 +37,7 @@ export class FormController {
 
         const insertRes = (await this.formService.create(CreateEntryDto))
         
-       if (!insertRes || !insertRes.id) throw new HttpException('Not executed', HttpStatus.NOT_MODIFIED);
+       if (!insertRes?.id) throw new HttpException('Not executed', HttpStatus.NOT_MODIFIED);
 
        return insertRes
     }

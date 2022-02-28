@@ -12,10 +12,10 @@ import 'dotenv/config'
     FormModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.HOST ?? '62.109.12.174',
+      host: process.env.HOST ?? 'localhost',
       port: 3306,
-      username: process.env.USERNAME ?? 'newuser',
-      password: process.env.PASSWORD ?? 'NicklzX.39',
+      username: process.env.USERNAME ?? 'root',
+      password: process.env.PASSWORD ?? 'password',
       database: process.env.DATEBASE ?? 'zenbit',
       entities: [Form, User],
       //synchronize: true,

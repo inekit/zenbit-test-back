@@ -22,7 +22,7 @@ export class FormService{
 
     }
 
-    getByEmail(email: String): Promise<Form[]>{
+    getByEmail(email: String = ""): Promise<Form[]>{
         return this.formRepository.find(
             {where: {user: {email:email}},
             relations: ['user']
@@ -30,11 +30,11 @@ export class FormService{
      
     }
 
-    getById(id: number): Promise<Form>{
-        return this.formRepository.findOne({
+    getById(id: number): Promise<Form[]>{
+        return (this.formRepository.find({
             where: {id : id},
             relations: ['user'],
-        })
+        }))
      
     }
 
